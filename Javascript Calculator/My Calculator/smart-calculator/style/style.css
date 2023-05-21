@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Charm&display=swap');
+
+
+
+/* root styles */
+:root{
+    --body-background: white;
+    --display-background: transparent;
+    --button-area-back: transparent;
+    --topDisplay-font-color: rgba(0, 0, 0, 0.6);
+    --display-font-color: #2f2f2f;
+    --input-button-font-color: black;
+    --input-button-color: #cccccc;
+    --input-button-hover-color: #c7c7c7;
+    --number-button-color: #dddddd;
+    --button-font: 'Poppins', sans-serif;
+    --footer-font-color: rgb(173, 173, 173);
+}
+/* style for dark mode */
+:root.dark{
+    --body-background: black;
+    --display-background: transparent;
+    --button-area-back: transparent;
+    --topDisplay-font-color: rgba(255, 255, 255, 0.6);
+    --display-font-color: whitesmoke;
+    --input-button-font-color: white;
+    --input-button-color: #444444;
+    --input-button-hover-color: #4d4d4d;
+    --number-button-color: #333333;
+    --button-font: 'Poppins', sans-serif;
+    --footer-font-color: rgb(70, 70, 70);
+}
+/* get tahoma font from .ttf file */
+@font-face {
+    font-family: displayFont;
+    src: url(fonts/tahoma.ttf);
+}
+
+
+html{ font-size: 16px;}
+*{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    background: var(--body-background);
+    margin: 0;
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* light and dark mode toggler styles */
+.theme{
+    width: 100%;
+    min-width: 13rem;
+    max-width: 33rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+.toggle{
+    background: rgb(185, 185, 185);
+    height: 10px;
+    width: 50px;
+    border-radius: 10px;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.toggler{
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: rgb(51, 51, 51);
+    position: absolute;
+    border-radius: 50%;
+}
+.dark .toggler{
+    fill: black;
+    background: white;
+    transform: translateX(30px);
+}
+
+
+/* calculator styles */
+.calculator{
+    min-width: 15rem;
+    max-width: 35rem;
+}
+
+/* calculator display styles */
+.input-area{
+    background: var(--display-background);
+    padding: 0.5rem 0.5rem 1rem;
+    font-family: displayFont, 'Tahoma', sans-serif;
+}
+#topDisplay{
+    background: transparent;
+    color: var(--topDisplay-font-color);
+    width: 100%;
+    text-align: right;
+    font-size: 1.3rem;
+    border: 0;
+    outline: 0;
+}
+#display{
+    background: transparent;
+    color: var(--display-font-color);
+    width: 100%;
+    text-align: right;
+    font-size: 2.7rem;
+    border: 0;
+    outline: 0;
+}
+
+/* calculator button styles */
+.button-area{
+    width: 100%;
+    height: 65vh;
+    min-height: 15rem;
+    background: var(--button-area-back);
+    padding: 2px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5vh;
+}
+.input-button{
+    color: var(--input-button-font-color);
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: var(--button-font);
+    background: var(--input-button-color);
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 40px;
+    user-select: none;
+}
+.input-button.clicked{
+    animation: clickAnimation 100ms ease-out;
+}
+@keyframes clickAnimation {
+    0%{transform: scale3d(.9,.9,.9);}
+    40%{transform: scale3d(1.3,1.3,1.3);}
+    100%{transform: scaleX(1);}
+}
+.numberButton{
+    background: var(--number-button-color);
+}
+.operationBut, #equalBut{
+    background: rgb(255, 102, 0);
+}
+#squareBut, #sqrtBut, #oneDivided{
+    font-family: 'Charm', serif;
+    font-weight: bold;
+}
+sup{
+    font-size: 17px;
+    position: relative;
+    top: -5px;
+}
+sub{
+    position: relative;
+    top: 5px;
+}
+
+
+/* signature of the maker of this calculator */
+footer{
+    color: var(--footer-font-color);
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+}
+footer > a{
+    color: inherit;
+}
+
+
+/* style only for laptop or desktop */
+@media screen and (min-width: 768px) {    
+    html{ font-size: 20px; }
+    
+    .input-button:hover{
+        background: var(--input-button-hover-color);
+    }
+    .operationBut:hover, #equalBut:hover{
+        background: rgb(255, 81, 0);
+    }
+    @keyframes clickAnimation {
+        40%{transform: scale3d(1.1,1.2,1.1);}
+    }
+
+    footer{
+        letter-spacing: 5px;
+    }
+}

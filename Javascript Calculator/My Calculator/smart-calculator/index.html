@@ -1,0 +1,100 @@
+<!-- Copyright 2022 | All rights reserved by SR TAMIM -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- calculator-v5.1.0 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- webpage title -->
+    <title>Smart Calculator</title>
+
+    <!-- stylesheet of the calculator -->
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- icon of the webpage -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- Primary Meta Tags -->
+    <title>Smart Calculator</title>
+    <meta name="title" content="Smart Calculator">
+    <meta name="description" content="A standard calculator made by SR TAMIM">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculator.tamim.com/">
+    <meta property="og:title" content="Smart Calculator">
+    <meta property="og:description" content="A standard calculator made by SR TAMIM">
+    <meta property="og:image" content="https://calculator-srt.netlify.app/img/meta-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calculator.tamim.com/">
+    <meta property="twitter:title" content="Smart Calculator">
+    <meta property="twitter:description" content="A standard calculator made by SR TAMIM">
+    <meta property="twitter:image" content="https://calculator-srt.netlify.app/img/meta-image.png">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- light and dark mode toggler -->
+        <div class="theme">
+            <div id="toggle" class="toggle">
+                <div class="toggler"></div>
+            </div>
+        </div>
+
+        <!-- calculator body -->
+        <div class="calculator">
+            <!-- calculator display -->
+            <div class="input-area">
+                <input type="text" id="topDisplay" readonly>
+                <input type="text" id="display" readonly>
+            </div>
+
+            <!-- calculator buttons -->
+            <div class="button-area">
+                <span id="percentBut" class="input-button">%</span>
+                <span id="squareBut" class="input-button">x<sup>2</sup></span>
+                <span id="del" class="input-button" title="Press(Delete)">DEL</span>
+                <span id="ac" class="input-button" title="Press(Backspace)">AC</span>
+                <span id="posNegToggle" class="input-button"><sup>+</sup>/<sub>−</sub></span>
+                <span id="sqrtBut" class="input-button">√x</span>
+                <span id="oneDivided" class="input-button"><sup>1</sup>/<sub>x</sub></span>
+                <span class="operationBut input-button" data-operation="/">÷</span>
+                <span class="numberButton input-button">7</span>
+                <span class="numberButton input-button">8</span>
+                <span class="numberButton input-button">9</span>
+                <span class="operationBut input-button" data-operation="*">×</span>
+                <span class="numberButton input-button">4</span>
+                <span class="numberButton input-button">5</span>
+                <span class="numberButton input-button">6</span>
+                <span class="operationBut input-button" data-operation="-">−</span>
+                <span class="numberButton input-button">1</span>
+                <span class="numberButton input-button">2</span>
+                <span class="numberButton input-button">3</span>
+                <span class="operationBut input-button" data-operation="+">+</span>
+                <span class="numberButton input-button">0</span>
+                <span id="dot" class="input-button">.</span>
+                <span id="ansBut" class="input-button">ANS</span>
+                <span id="equalBut" class="input-button">=</span>
+            </div>
+        </div>
+
+        <!-- signature of the maker of this calculator -->
+        <footer>Calculator made by <a href="https://sr-tamim.vercel.app/" target="_blank">Saksham Pandit</a></footer>
+    </div>
+
+    <!-- math js library -->
+    <script src="script/math.js"></script>
+    <!-- main javascript file of this calculator -->
+    <script src="script/script.js"></script>
+
+    <!-- javascript file for service worker -->
+    <script src="script/app.js"></script>
+</body>
+
+</html>
